@@ -1,1 +1,127 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    background-color: #303030;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+table {
+    width: 100%;
+}
+
+.mat-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+
+.icon-gn {
+    margin-right: 10px;
+}
+
+.btn-trash {
+    background-color: #A52A2A;
+}
+
+.content-card {
+    height: 250px;
+    border-color: #424242;
+}
+
+.card-1 {
+    border-color: #424242;
+}
+
+.content-i {
+    margin-top: 50px;
+}
+
+.virtual-content-card-1 {
+    height: 400px;
+    background-color: #424242;
+    overflow: auto;
+}
+
+.virtual-content {
+    height: 200px;
+    background-color: #424242;
+    overflow: auto;
+}
+
+.virtual-content-search {
+    height: 80px;
+    background-color: #424242;
+}
+
+.header-card {
+    background-color: #A52A2A;
+}
+
+.img-content {
+    height: 70%;
+    width: 70%;
+}
+
+.dd-container {
+    width: 400px;
+    max-width: 100%;
+    margin: 0 25px 25px 0;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.dd-list {
+    height: 358px;
+    border-radius: 4px;
+    overflow: hidden;
+    display: block;
+}
+
+.dd-list-2 {
+    height: 400px;
+    background: #424242;
+    border-radius: 4px;
+    overflow: hidden;
+    display: block;
+}
+
+.dd-box {
+    padding: 20px 10px;
+    border-bottom: solid 1px #ccc;
+    color: rgba(0, 0, 0, 0.87);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    cursor: move;
+    background: #2E2F33;
+    font-size: 14px;
+}
+
+.cdk-drag-preview {
+    box-sizing: border-box;
+    border-radius: 4px;
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.cdk-drag-placeholder {
+    opacity: 0;
+}
+
+.cdk-drag-animating {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.example-box:last-child {
+    border: none;
+}
+
+.example-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}

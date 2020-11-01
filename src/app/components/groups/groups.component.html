@@ -1,0 +1,63 @@
+<div class="container">
+    <div class="mt-4" cdkDropListGroup>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="card card-1 mb-3">
+                    <div class="card-header header-card">
+                        Grupos
+                    </div>
+                    <div class="card-body virtual-content-search">
+                        <div class="form-group">
+                            <input type="text" class="form-control" [(ngModel)]="groupFilter.name" placeholder="Buscador">
+                        </div>
+                    </div>
+                    <div class="card-body virtual-content-card-1">
+                        <div cdkDropList [cdkDropListData]="groups" class="dd-list-2 mb-3" (cdkDropList)="drop($event)">
+                            <mat-card cdkDrag="group.name" class="dd-box mb-3 text-white" *ngFor="let group of groups | filterBy: groupFilter">
+                                {{ group.name }}
+                            </mat-card>
+                            <div class="text-center">
+                                <label *ngIf="(groups | filterBy: groupFilter).length === 0">No existen coincidencias</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="text-center content-i mb-3">
+                    <img src="assets/img/content.png" *ngIf="banderaDrog === true" cdkDropList [cdkDropListData]="groupsN" class="img-content rounded" (cdkDropListDropped)="drop($event)">
+                </div>
+                <div *ngIf="banderaDrog === false" class="card content-card">
+                    <div class="card-header header-card">
+                        <div class="row">
+                            <div class="col-lg-10 col-sm-8 col-xs-6">
+                                <mat-checkbox class="dd-margin" [checked]="allComplete" (change)="setAll($event.checked)">
+                                    Grupo {{ groupName }}
+                                </mat-checkbox>
+                            </div>
+                            <div class="col-lg-2 col-sm-4 col-xs-6">
+                                <div class="text-right">
+                                    <button (click)="deleteCard()" class="btn btn-trash btn-sm text-white"><i class="fas fa-trash-alt"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body virtual-content text-white">
+                        <div class="">
+                            <mat-list role="list">
+                                <mat-list-item *ngFor="let item of itemsG" role="listitem">
+                                    <mat-checkbox class="dd-margin" [(ngModel)]="item.check" (ngModelChange)="updateAllComplete()">
+                                        <label>{{ item.name }}</label>
+                                    </mat-checkbox>
+                                </mat-list-item>
+                            </mat-list>
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="banderaDrog === false" class="mt-3 mb-3 text-right">
+                    <button class="btn btn-info" (click)="showItemsEnabled()">Continuar <i class="fas fa-arrow-circle-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
